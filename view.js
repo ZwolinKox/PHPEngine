@@ -1,6 +1,6 @@
  $(window).ready(() => {
-     start();
-     update();
+    start();
+    update();
  })
 
 
@@ -240,24 +240,33 @@
             });
            let dragTiles = Math.floor(mousePos.x/50) + ((Math.ceil(mousePos.y/50) -1 ) * map.w);
 
-            map.map[dragTiles] = 0;
+            if(Math.floor(mousePos.x/50) < map.w)
+                map.map[dragTiles] = 0; //activeTile
         }
-
-        if(mouse[2]) //PPM
-        {
+        else if (mouse[2]) {
             $( document ).on( "mousemove", ( event ) => {
                 mousePos.x = event.pageX;
                 mousePos.y = event.pageY;
             });
-            
-            let dragTiles = Math.floor(mousePos.x/50) + ((Math.ceil(mousePos.y/50) -1 ) * map.w);
+           let dragTiles = Math.floor(mousePos.x/50) + ((Math.ceil(mousePos.y/50) -1 ) * map.w);
 
-            map.map[dragTiles] = 1;
+            if(Math.floor(mousePos.x/50) < map.w)
+                map.map[dragTiles] = 1; //activeTile
         }
 }
 
     get speed() {
         return 5;
+    }
+ }
+
+ class Menu {
+
+    update() {
+        const image = new Image();
+        image.src = "textures/grass.png";
+        image.id = "textureGrass";
+        screen.ctx.drawImage(image, screen.w()-50, 0, map.tileW, map.tileH);
     }
  }
 
@@ -270,11 +279,14 @@
  let screen = new Screen(); //Nasza instancja okna gry
  let player = new Player();
  let map = new Map();
+ let menu = new Menu();
  let tiles = []; //Wszystkie bloki na mapie
  let textures = [];
+ let activeTile = 0;
 
  let keys = [];
  let mouse = [];
+
 
  function start() {
     loadTextures();
@@ -297,7 +309,7 @@
      screen.fillRect;
      map.update();
      player.update();
-
+     menu.update();
  }
 
  window.onresize = function () { 
