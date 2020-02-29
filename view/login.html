@@ -28,7 +28,7 @@
         <div class="row">
             
             <div class="col-12 col-md-6">
-                <form id="register-form">
+                <div id="register-form">
                     <div class="form-group">
                         <label for="login">Login</label>
                         <input type="login" class="form-control" id="login" placeholder="Login: ">
@@ -41,12 +41,14 @@
                       <label for="password">Password</label>
                       <input type="password" class="form-control" id="password" placeholder="Password">
                     </div>
-                    <button type="submit" class="btn btn-primary">Register</button>
-                  </form>
+                    <button id="register-button" class="btn btn-primary">Register</button>
+                </div>
+                <div id="register-error" style="color: red"></div>
+
             </div>
 
             <div class="col-12 col-md-6">
-                <form id="login-form">
+                <div id="login-form">
                     <div class="form-group">
                         <label for="loginL">Login</label>
                         <input type="loginL" class="form-control" id="loginL" placeholder="Login: ">
@@ -56,9 +58,13 @@
                       <label for="passwordL">Password</label>
                       <input type="passwordL" class="form-control" id="passwordL" placeholder="Password">
                     </div>
-                    <button type="submit" class="btn btn-primary">Login</button>
-                  </form>
+                    <button id="login-button" class="btn btn-primary">Login</button>
+                </div>
+                <div id="login-error" style="color: red"></div>
+
             </div>
+
+            
             
            
         </div>
