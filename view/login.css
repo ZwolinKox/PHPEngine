@@ -1,0 +1,27 @@
+* { 
+     margin:0; 
+     padding:0; 
+}
+
+body {
+    background-color: rgb(74, 78, 74);
+    color: white;
+}
+
+#login-form {
+    margin-top: 25%;
+}
+
+#register-form {
+    margin-top: 25%;
+}
+
+.container-fluid{ margin: 0;} 
+
+#logo {
+    margin: 0;
+    padding: 0px;
+    background-color: rgb(58, 61, 58);
+    text-align: center;
+    
+}
